@@ -29,3 +29,29 @@ const myObj = {
 const myFunction = function(){
     console.log("Hii JavaScript");
 }
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++==
+// Stack and Heap memory in javaScript
+
+// stack(stack memory used in primitive data types, in this memory it gives us a copy of a declared variable) ,
+//  heap (heap memory used in non-primitive datatypes, it gives us reference of real value)
+// example of stack memory:
+
+let myName = "ruchiSingh"
+let anotherName = myName
+anotherName = "JavaScript code"
+
+// console.log(myName);
+// console.log(anotherName);
+
+// example of heap memory:
+
+let userOne = {
+    email: "user@gmail.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+userTwo.email = "ruchi@gmail.com"
+// console.log(userOne.email);
+// console.log(userTwo.email);
