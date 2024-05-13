@@ -14,9 +14,11 @@ Comparisons convert null to a number, treating it as 0.
 that's why (3) null >= 0 is true and (1) null >0 is false */
 // console.log(null >= 0);
 
-console.log(undefined == 0);
-console.log(undefined > 0);
-console.log(undefined < 0);
+// console.log(undefined == 0);
+// console.log(undefined > 0);
+// console.log(undefined < 0);
 
 // ===
-console.log("2" === 2);
+// console.log("2" === 2);
+
+//  these type of comparison are not a good practice, our code shoud be clean or readable
