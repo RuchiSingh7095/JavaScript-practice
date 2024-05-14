@@ -34,7 +34,7 @@ const myFunction = function(){
 // Stack and Heap memory in javaScript
 
 // stack(stack memory used in primitive data types, in this memory it gives us a copy of a declared variable) ,
-//  heap (heap memory used in non-primitive datatypes, it gives us reference of real value)
+//  heap (heap memory used in non-primitive datatypes, it gives us reference of real value i.e. whatever you changed it will change original value)
 // example of stack memory:
 
 let myName = "ruchiSingh"
