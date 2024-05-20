@@ -17,6 +17,12 @@ const arr3 = [1, 2, 3, [4, 5, 6], 7, [8, 7, [6, 2]]]
 const arr4 = arr3.flat(Infinity)
 // console.log(arr4);
 
-// console.log(Array.isArray("Ruchi")); // used to check that given array is present or not
+// console.log(Array.isArray("Ruchi")); // used to check that given value is an array or not
 // console.log(Array.from("Ruchi")); // Creates an array from an array-like object.
 // console.log(Array.from({name: "ruchi"})); // in this case it returns an empty array bcoz we have to specify that from which value we need array i.e. from keys or from value define in an object
+
+let score1 = 100
+let score2 = 200
+let score3 = 300
+// Returns a new array from a set of elements.
+console.log(Array.of(score1,score2,score3));
