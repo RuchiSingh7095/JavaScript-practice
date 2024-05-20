@@ -26,12 +26,12 @@ const newArr = myArr.join(); // join method converts the array elements in a str
 // slice or splice
 console.log("A ", myArr);
 
-const myn1 = myArr.slice(1,3);
+const myn1 = myArr.slice(1,3); // Returns a copy of a section of an array, It don't manipulate original array
 console.log(myn1);
 
 console.log("B ", myArr);
 
-const myn2 = myArr.splice(1,3)
+const myn2 = myArr.splice(1,3) // it changed original array, it manipulates original array
 console.log(myn2);
 
 console.log("C ", myArr);
