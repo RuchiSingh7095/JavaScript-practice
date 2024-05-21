@@ -77,3 +77,19 @@ const myObj = [
 
 // how to check if the property is exist in the object or not
 // console.log(myapp.hasOwnProperty('isLoggedIn')); // it return the result in boolean true/false
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------
+
+// destructuring of object :
+
+const course = {
+    courseName: "JavaScript",
+    price: "999",
+    courseTutor: "Hitesh Choudhary"
+}
+
+// we can access above values by using dot notation i.e.  
+// console.log(course.courseName); // but instead of this we use object destructoring to get rid of duplication of code
+
+const { courseTutor: tutor, price: coursePrice, courseName: name } = course // this is called destructoring of object 
+console.log(tutor, name, coursePrice); 
