@@ -29,7 +29,7 @@
 // truthy values : 
 // "0" - 0 written inside a string is truthy value,
 // 'false' - false written inside a string is trthy value,
-//  " " - empty string with a space is a truthy CSSMathValue, any thing written inside string is consider as truthy values,
+//  " " - empty string with a space is a truthy Value, any thing written inside string is consider as truthy values,
 // [] - empty array is also consider as truthy value,
 // {} - empty object also a truthy value, 
 // function(){} - empty function is also consider as truthy value
