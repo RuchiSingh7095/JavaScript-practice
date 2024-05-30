@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | 3</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    
+</body>
+<script>
+    const div = document.createElement('div'); // using createElement we can create elements in the script
+    console.log(div);
+    div.className = 'main'; // we can add class here like this
+    // div.id = 'myId' // we can add id like this
+    // div.id = Math.random() // it gives you a random id for your div 
+    div.id = Math.round(Math.random() * 10 + 1); // we can get a simple random id for the div by using these methods
+    div.setAttribute('title', 'generated Title') ;// using setAttribute we can set attributes in any element
+    div.style.backgroundColor = 'green';
+    div.style.color = 'white';
+    div.style.padding = '15px';
+    // div.innerText = "JavaScript or code" // instead of using innerText to add text content in an element we use createTextNode method
+    const addText = document.createTextNode("JavaScript or code") // to attach this with element we have to append this
+    div.appendChild(addText); // using this approach you can add and attach a text content in an element.
+
+    // how to attach this div created here with the body of page :
+
+    document.body.appendChild(div); // like this we can attach element with the body
+</script>
+</html>

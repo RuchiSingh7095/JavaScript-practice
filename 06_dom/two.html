@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Document Object Modal</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <div class="parent">
+        <div class="day">Sunday</div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent'); // to get value from the parent className using querySelector
+    // console.log(parent); 
+    // console.log(parent.children); // parent.childeren give us html (array-like) collection of all children present in parent class
+    // console.log(parent.children[1]); // to get a particular child value
+    // console.log(parent.children[1].innerHTML); // to get what content is written in the child class
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    // } // using for loop we can access value from the parent-child relation
+
+    // parent.children[1].style.color = 'red' // we can set styles like this on a particular child
+    // console.log(parent.firstElementChild) // it gives you first element of child
+    // console.log(parent.lastElementChild); // it gives you last element of child
+
+    // const dayOne = document.querySelector('.day'); // querySelector gives you the first element which matches the class name given in the querySelector
+    // console.log(dayOne);
+
+    // console.log(dayOne.parentElement) // using parentElement we can get parent element of an child
+    // console.log(dayOne.nextElementSibling); // using nextElementSibling we can go to the next child
+
+    // console.log("Nodes : ", parent.childNodes) // it gives you all nodelist of child
+
+</script>
+</html>
