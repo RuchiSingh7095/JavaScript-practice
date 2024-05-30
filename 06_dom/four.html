@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | 4</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+
+    // add language :
+
+    function addLanguage(langName) { // we have created a function to add new list
+        const newLang = document.createElement('li'); // created a new li element
+        newLang.innerHTML = `${langName}`; // set the text content using innerHTML 
+        document.querySelector('.language').appendChild(newLang) // append child / attach the li item in the existing ul element
+        //p.n. : appendchild method may cause issue with optimization if there is multiple of data, so we can do the same thing with an optimized way. 
+    }
+    addLanguage("python");
+    addLanguage("Ruby");
+
+    // this is the more optimized way to create or add element in your HTML :
+    function addOptiLanguage(langName) {
+        const newLang = document.createElement('li');
+        newLang.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(newLang);
+    }
+    addOptiLanguage("TypeScript")
+     
+    // edit-language :
+
+    const secondVal = document.querySelector("li:nth-child(2)") // select the child which you want to edit 
+    const newVal = document.createElement('li') // create a new element which you want to add
+    newVal.textContent = "Java"; // give text content to the item
+    secondVal.replaceWith(newVal); // using replaceWith() method we can easily replace or edit values 
+
+    // replace first value from second 
+    const val1 = document.querySelector("li:first-child"); // select the child which you want to edit
+    val1.outerHTML = "<li>TypScript</li>" // give value using outerHTML like this, you can edit the text
+
+    // delete-language :
+    const removeLang = document.querySelector("li:last-child"); // select the item using querySelector
+    removeLang.remove(); // using remove method we can easily remove the items
+
+</script>
+</html>
