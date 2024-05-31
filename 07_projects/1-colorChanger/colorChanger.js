@@ -1,22 +1,11 @@
-# Project related to DOM
-
-## project link
-[click here]()
-
-# Solution code
-
-## project 1
-
-```javascript
-
-const buttons = document.querySelectorAll('.button');
-const body = document.querySelector('body');
+const buttons = document.querySelectorAll('.button'); //select all buttons in which you want to make changes
+const body = document.querySelector('body'); // select body bcoz we want to change backgroundd of body
 
 buttons.forEach((button) => {
-  console.log(button);
-  button.addEventListener('click', function (e) {
-    console.log(e);
-    console.log(e.target);
+  // console.log(button);
+  button.addEventListener('click', function (e) { // we can use a click event listener to the button to handle the situation
+    // console.log(e);
+    // console.log(e.target);
     // change background color using switch statement:
 
     const color = e.target.id;
@@ -53,5 +42,3 @@ buttons.forEach((button) => {
     // }
   });
 });
-
-```
