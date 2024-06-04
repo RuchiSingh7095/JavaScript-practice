@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <h1>Hello javaScript...SetInterval</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval will run continuously after a given time period:
+    // setInterval(function(){
+    //     console.log("Hiii", Date.now());
+    // }, 1000); 
+
+    // this will also works the same:
+    // let timeInterval = function(){
+    //     console.log("Hiii", Date.now());
+    // }
+    // setInterval(timeInterval, 1000); 
+
+    // we can pass parameter in setInterval
+    // let timeInterval = function(str){
+    //     console.log(str, Date.now());
+    // }
+    // setInterval(timeInterval, 1000, "myStr"); 
+    // bcoz it runs continuously we have to stop this at some event, so we use clearInterval();
+    // let myTime = setInterval(timeInterval, 1000, "myStr"); 
+    // clearInterval(myTime);
+
+    
+    // start the time according to start button clicked :
+    let intervalId;
+    document.getElementById('start').addEventListener('click', function () {
+        // Clear any existing intervals to avoid multiple intervals running simultaneously
+        clearInterval(intervalId);
+        intervalId = setInterval(function () {
+            console.log("Date :", Date.now());
+        }, 1000);
+    });
+    
+    // stop the time according to stop button clicked :
+        document.getElementById('stop').addEventListener('click', function () {
+            clearInterval(intervalId);
+            console.log("Interval stopped.");
+        });
+
+</script>
+</html>

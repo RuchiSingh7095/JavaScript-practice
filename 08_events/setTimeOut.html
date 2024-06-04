@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+</head>
+<body>
+    <h1>Async javaScript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("Ruchi");
+    // }, 2000); // setTimeout will run after the given time only once
+    let sayMyName = function(){
+        console.log("Ruchi");
+    }
+    setTimeout(sayMyName, 2000); // we can give the reference of function also
+
+    // if you want to change the html content :
+    let changeText = function(){
+        document.querySelector('h1').innerHTML = "Text Changed"
+    }
+    // setTimeout(changeText, 2000); 
+    // we used setTimeout(), but what if we want to stop this timeout function at some point
+    // to achieve this we have clearTimeout();
+
+    let stopTime = setTimeout(changeText, 2000);
+    document.querySelector('#stop').addEventListener('click', function(){
+        console.log("stopped");
+        clearTimeout(stopTime); // we can stop setTimeout using clearTimeout
+    })
+</script>
+</html>

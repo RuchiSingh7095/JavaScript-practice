@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+                    <!-- onclick method using under the html code is not a good practice -->
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // all events in javaScript will run sequentially. javaScript is a sequential language.
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked"); 
+    // } // this code will work as expected but its also not a good way to use onclick like this.
+    // becoz using onclick like this may cause issue sometimes, it does not give more features, instead of this we use event-listeners
+    // event handlers have more features than onclick
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("owl clicked again");
+    // }); // like this we can use/handle events like click and so on.
+
+    // attachEvent method() : it was used earlier with internet exploror
+    // jQuery - .on method was used earlier.
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+        // console.log(e); // will get an object in which all features or methods ara present like timestamp, target, height, width etc.
+        // console.log(e.type); // it gives you type of event
+        // console.log(e.timeStamp); // get timestamp info
+        // console.log(e.defaultPrevented); // by default it is false, we can change its behaviour. we can stop element's behaviour using this
+        // console.log("target : ",e.target); // it gives element info that trigerred by event.
+        // console.log("current target : ",e.currentTarget); // it also gives you current element info that triggered by event.
+        // toElement, srcElement
+        // console.log("srcElement : ",e.srcElement); // it gives us element in which event is triggered
+        // to get width and height horizontally or vertically :
+        // console.log("clientX : ",e.clientX); 
+        // console.log("clientY : ",e.clientY);
+        // console.log("screenX : ",e.screenX);
+        // console.log("screenY : ",e.screenY);
+    // }); 
+
+    // event types, timestamp, defaultPrevented, 
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    //  Event Propagation :
+    // document.getElementById('owl').addEventListener('click', function(e){}, false);
+    // a boolean value given in above line is seted by default on false, it may not cause any problem either is true or false
+    // event propagtion have two context i.e. "event bubbling" or "event capturing"
+    // by default in all projects event bubbling is used, but in some scenerios event capturing is also used.
+
+    // example : 
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("ul is clicked");
+    // });
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl is clicked");
+    //     e.stopPropagation(); // using stopPropagation after "owl is clicked" nothing will call, it will stop bubbling on the event
+    // });
+
+    // in this example when we check the console, when we click on other images; "ul is clicked" will show first but if
+    // we click on owl image it will give "owl is clicked" first then "ul is clicked" bcoz of event bubbling
+    // event bubbling goes inner to outer element 
+    // if we give true value it give opposite result as event capturing bcoz event capturing goes from outer to inner element.
+    // so if we remove boolean value from the code we get same results by default
+    // if you want to stop bubbling we can use stopPropagation method.
+
+    // example of preventDefault() :
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     console.log("google is clicked");
+    //     e.preventDefault(); // it will block default click on event
+    // })
+
+    // remove images from li by clicking on them:
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e.target.parentNode);
+        // console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeImg = e.target.parentNode;
+            removeImg.remove();
+        }
+        // removeImg.parentNode.removeChild(removeImg);
+        // both approach gives you same results
+    }, false)
+</script>
+</html>
