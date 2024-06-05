@@ -32,21 +32,24 @@
     // clearInterval(myTime);
 
     
-    // start the time according to start button clicked :
+    // start and stop the time according to button clicked :
     let intervalId;
-    document.getElementById('start').addEventListener('click', function () {
-        // Clear any existing intervals to avoid multiple intervals running simultaneously
-        clearInterval(intervalId);
-        intervalId = setInterval(function () {
-            console.log("Date :", Date.now());
-        }, 1000);
-    });
-    
-    // stop the time according to stop button clicked :
-        document.getElementById('stop').addEventListener('click', function () {
-            clearInterval(intervalId);
-            console.log("Interval stopped.");
-        });
+        const startTime = function () {
+            if (!intervalId) {
+                intervalId = setInterval(function () {
+                    console.log("Date :", Date.now());
+                }, 1000);
+            }
+        }
+
+        const stopTime = function () {
+                clearInterval(intervalId);
+                intervalId = null;
+                console.log("Interval stopped.");
+            }
+
+    document.getElementById('start').addEventListener('click', startTime);
+    document.getElementById('stop').addEventListener('click', stopTime);
 
 </script>
 </html>
