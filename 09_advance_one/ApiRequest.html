@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<style>
+    #card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 40%;
+    }
+
+    #card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    #container {
+        padding: 2px 16px;
+    }
+</style>
+<body>
+    <!-- Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+<button id="button">GET API INFO</button>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'; // defined a request url
+    const xhr = new XMLHttpRequest(); // declare a new api request
+    xhr.open('GET', requestUrl); // open() has been called, in open method we have to give two paramenter, a method or a string
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            document.getElementById('button').addEventListener('click', () => {
+
+                const div = document.createElement('div');
+                const h2 = document.createElement('h2');
+                h2.innerHTML = "Details :";
+
+                const heading = document.createElement('h4');
+                heading.innerHTML = `<span> Name : ${data.login}</span>`
+
+                const img = document.createElement('img');
+                img.style.width = "200px";
+                img.style.height = "200px";
+                img.src = data.avatar_url;
+
+                const followers = document.createElement('h4');
+                followers.innerHTML = `<span> Followers : ${data.followers}</span>`;
+
+                div.appendChild(h2);
+                div.appendChild(heading);
+                div.appendChild(followers);
+                div.appendChild(img);
+                document.body.appendChild(div);
+            })
+            // console.log(data.followers);
+            // console.log(data.avatar_url);
+        }
+    } // onreadystatechange used to change state continuously.
+    xhr.send(); // when send() is called, header and status are available
+</script>
+</html>
